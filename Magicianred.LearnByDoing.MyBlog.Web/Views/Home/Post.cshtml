@@ -1,0 +1,25 @@
+﻿@model Magicianred.LearnByDoing.MyBlog.Domain.Models.Post
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Blog post</h1>
+    <p>Learn more <a href="@Url.Action("About", "Home")">about this project</a>.</p>
+    @if (@Model != null)
+    {
+        <article class="post-details post-id-@(Model.Id)">
+            <h2>@Model.Title</h2>
+            <p>@Model.Text</p>
+        </article>
+    }
+    else
+    {
+        <article>
+            <p>Post Not Found</p>
+        </article>
+    }
+    <p>
+        <a href="@Url.Action("Index", "Home")">Return to Home</a>
+    </p>
+</div>
